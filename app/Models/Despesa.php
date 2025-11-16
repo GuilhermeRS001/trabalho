@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Despesa extends Model
 {
-     use HasFactory;
+    use HasFactory;
 
     protected $fillable = [
         'user_id',
@@ -16,12 +16,7 @@ class Despesa extends Model
         'parcelas',
         'parcelas_pagas',
         'data_vencimento',
-        'status',
+        'categoria',
+        'em_aberto'
     ];
-
-    // (Opcional) Se quiser ligar cada despesa ao usuário
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 }
